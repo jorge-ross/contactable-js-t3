@@ -6,29 +6,28 @@ import { input } from "../components/input.js";
 function render() {
   const { loginError } = this.state;
   return `
-    <main class="section">
+    <main class="section-xs">
       <section class="container">
-        <h1 class="heading heading--lg text-center mb-4">Login</h1>
-        <form class="flex flex-column gap-4 mb-4 js-login-form">
-
+        <div class="login-header">
+          <h1 class="login-header__title">Login</h1>
+        </div>
+        <form class="login-form js-login-form">
           ${input({
-            label: "email",
             id: "email",
             name: "email",
-            placeholder: "jhon@example.com",
+            placeholder: "email",
             type: "email",
             required: true,
-            value: "team3-kevin@mail.com",
+            value: "",
           })}
 
           ${input({
-            label: "password",
             id: "password",
             name: "password",
-            placeholder: "********",
+            placeholder: "password",
             type: "password",
             required: true,
-            value: "qwerty",
+            value: "",
           })}
 
           ${
@@ -36,10 +35,11 @@ function render() {
               ? `<p class="text-center error-300">${loginError}</p>`
               : ""
           }
-
-          <button class="button button--primary">Login</button>
+          <div class="login-buttons">
+            <a href ="#" class="login-sign-up-button js-signup-link">Signup</a>
+            <button class="login-login-button">Login</button>
+          </div>
         </form>
-        <a href="#" class="block text-center js-signup-link">Create account</a>
       </section>
     </main>
   `;
