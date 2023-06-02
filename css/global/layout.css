@@ -2,6 +2,10 @@
   padding: 64px 16px;
 }
 
+.section-xs {
+  padding: 0 10px;
+}
+
 .section-sm {
   padding: 32px;
 }

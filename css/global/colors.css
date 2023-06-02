@@ -30,6 +30,8 @@
     0px 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0px 20px 25px -5px rgba(0, 0, 0, 0.1),
     0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --line: rgba(0, 0, 0, 0.12);
+  --blue: #2962ff;
 
   --shadow-input-primary: 0px 0px 4px var(--primary-300);
   --shadow-input-error: 0px 0px 4px var(--error-500);
