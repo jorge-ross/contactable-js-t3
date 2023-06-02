@@ -4,6 +4,7 @@ import HomePage from "./src/pages/home-page.js";
 import { tokenKey } from "./src/config.js";
 import STORE from "./src/store.js";
 import newContact from "./src/pages/new-contact-page.js";
+// import createUser from "./src/pages/sign-up.js";
 
 // async function init() {
 //   try {
@@ -20,6 +21,9 @@ import newContact from "./src/pages/new-contact-page.js";
 //   }
 // }
 
-DOMHandler.load(LoginPage);
+// DOMHandler.load(LoginPage);
 // DOMHandler.load(newContact);
+// DOMHandler.load(createUser);
+=======
 // DOMHandler.load(HomePage);
+
