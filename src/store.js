@@ -1,7 +1,7 @@
-const STORAGE = {
+const STORE = {
   user: null,
   contacts: [],
   currentTab: "",
 };
 
-export default STORAGE;
+export default STORE;

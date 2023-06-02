@@ -1,5 +1,5 @@
 import DOMHandler from "../dom-handler.js";
-import STORAGE from "../storage.js";
+import STORE from "../store.js";
 import { login } from "../services/sessions-service.js";
 import { input } from "../components/input.js";
 
@@ -60,9 +60,9 @@ function listenSubmitForm() {
       };
 
       const user = await login(credentials);
-      STORAGE.user = user;
-      console.log(STORAGE);
-      // await STORAGE.fetchCategories();
+      STORE.user = user;
+      console.log(STORE);
+      // await STORE.fetchCategories();
 
       // DOMHandler.load(HomePage);
     } catch (error) {

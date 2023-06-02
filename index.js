@@ -1,7 +1,7 @@
 import DOMHandler from "./src/dom-handler.js";
 import LoginPage from "./src/pages/login-page.js";
 import { tokenKey } from "./src/config.js";
-import STORAGE from "./src/storage.js";
+import STORE from "./src/store.js";
 
 // async function init() {
 //   try {
@@ -9,8 +9,8 @@ import STORAGE from "./src/storage.js";
 //     if (!token) throw new Error();
 
 //     const user = await getUser();
-//     STORAGE.user = user;
-//     await STORAGE.fetchCategories();
+//     STORE.user = user;
+//     await STORE.fetchCategories();
 //     DOMHandler.load(HomePage);
 //   } catch (error) {
 //     sessionStorage.removeItem(tokenKey);
