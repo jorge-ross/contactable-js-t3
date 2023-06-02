@@ -28,7 +28,7 @@ function render() {
   </form>`;
 }
 
-function listenerSingUp() {
+function listenerSignUp() {
   const form = document.querySelector("js-signup-form");
   form.addEventListener("submit", async (event) => {
     try {
@@ -52,7 +52,7 @@ const createUser = {
     return render.call(this);
   },
   addListeners() {
-    listenerSingUp();
+    listenerSignUp();
   },
   state: {
     CreateUserError: null,
