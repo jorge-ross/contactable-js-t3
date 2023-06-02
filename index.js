@@ -1,9 +1,10 @@
 import DOMHandler from "./src/dom-handler.js";
 import LoginPage from "./src/pages/login-page.js";
+import HomePage from "./src/pages/home-page.js";
 import { tokenKey } from "./src/config.js";
 import STORE from "./src/store.js";
 import newContact from "./src/pages/new-contact-page.js";
-import createUser from "./src/pages/sign-up.js";
+// import createUser from "./src/pages/sign-up.js";
 
 // async function init() {
 //   try {
@@ -22,4 +23,7 @@ import createUser from "./src/pages/sign-up.js";
 
 // DOMHandler.load(LoginPage);
 // DOMHandler.load(newContact);
-DOMHandler.load(createUser);
+// DOMHandler.load(createUser);
+=======
+// DOMHandler.load(HomePage);
+

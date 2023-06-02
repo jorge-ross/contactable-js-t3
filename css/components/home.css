@@ -1,0 +1,23 @@
+.home-header {
+  padding: 0.875rem 0.625rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.home-header__title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+}
+
+.home-logout-button {
+  color: var(--blue);
+  border: 0;
+  background: white;
+}
+
+.contactable-title {
+  border-bottom: 1px solid var(--line);
+  padding: 1rem 0.625rem;
+}
