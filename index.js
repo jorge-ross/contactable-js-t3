@@ -1,5 +1,6 @@
 import DOMHandler from "./src/dom-handler.js";
 import LoginPage from "./src/pages/login-page.js";
+import HomePage from "./src/pages/home-page.js";
 import { tokenKey } from "./src/config.js";
 import STORE from "./src/store.js";
 import newContact from "./src/pages/new-contact-page.js";
@@ -21,3 +22,4 @@ import newContact from "./src/pages/new-contact-page.js";
 
 DOMHandler.load(LoginPage);
 // DOMHandler.load(newContact);
+// DOMHandler.load(HomePage);

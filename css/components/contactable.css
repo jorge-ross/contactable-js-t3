@@ -1,0 +1,32 @@
+.contactable-contacts {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.contactable-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+}
+
+.contactable-card__contact {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: nowrap;
+}
+
+.contactable-card svg {
+  width: 20px;
+  height: 19px;
+  fill: var(--svg);
+  stroke-width: 1;
+  stroke: var(--svg);
+}
+
+.contactable-card__image {
+  height: 100%;
+  width: 32px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
