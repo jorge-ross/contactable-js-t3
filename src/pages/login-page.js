@@ -1,5 +1,6 @@
 import DOMHandler from "../dom-handler.js";
 import STORE from "../store.js";
+import HomePage from "./home-page.js";
 import { login } from "../services/sessions-service.js";
 import { input } from "../components/input.js";
 
@@ -18,7 +19,7 @@ function render() {
             placeholder: "email",
             type: "email",
             required: true,
-            value: "",
+            value: "team3-kevin@mail.com",
           })}
 
           ${input({
@@ -27,7 +28,7 @@ function render() {
             placeholder: "password",
             type: "password",
             required: true,
-            value: "",
+            value: "qwerty",
           })}
 
           ${
@@ -61,10 +62,8 @@ function listenSubmitForm() {
 
       const user = await login(credentials);
       STORE.user = user;
-      console.log(STORE);
-      // await STORE.fetchCategories();
-
-      // DOMHandler.load(HomePage);
+      await STORE.fetchContacts();
+      DOMHandler.load(HomePage);
     } catch (error) {
       this.state.loginError = error.message;
       DOMHandler.reload();
