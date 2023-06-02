@@ -3,6 +3,7 @@ import LoginPage from "./src/pages/login-page.js";
 import { tokenKey } from "./src/config.js";
 import STORE from "./src/store.js";
 import newContact from "./src/pages/new-contact-page.js";
+import createUser from "./src/pages/sign-up.js";
 
 // async function init() {
 //   try {
