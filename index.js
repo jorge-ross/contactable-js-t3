@@ -21,9 +21,7 @@ import newContact from "./src/pages/new-contact-page.js";
 //   }
 // }
 
-// DOMHandler.load(LoginPage);
+DOMHandler.load(LoginPage);
 // DOMHandler.load(newContact);
 // DOMHandler.load(createUser);
-=======
 // DOMHandler.load(HomePage);
-
