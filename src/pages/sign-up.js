@@ -30,7 +30,7 @@ function render() {
 }
 
 function listenerSignUp() {
-  const form = document.querySelector("js-signup-form");
+  const form = document.querySelector(".js-signup-form");
   form.addEventListener("submit", async (event) => {
     try {
       event.preventDefault();
@@ -41,6 +41,8 @@ function listenerSignUp() {
       };
       const user = await newUser(credentials);
       STORE.user = user;
+      await STORE.fetchContacts();
+      DOMHandler.load(HomePage);
     } catch (error) {
       this.state.CreateUserError = error.message;
       DOMHandler.reload();
@@ -50,7 +52,7 @@ function listenerSignUp() {
 
 const createUser = {
   toString() {
-    return render.call(this);
+    return render.call(this, this.addListeners);
   },
   addListeners() {
     listenerSignUp();
