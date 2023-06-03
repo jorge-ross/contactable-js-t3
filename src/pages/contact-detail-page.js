@@ -5,36 +5,41 @@ import HomePage from "./home-page.js";
 import { logout } from "../services/sessions-service.js";
 
 function render() {
-  const { id, name, number, email, favorite, relation } = STORE.details;
+  const { id, name, number, email, favorite, relation, ...rest } =
+    STORE.details;
   const { formError } = contactDetail.state;
 
   return `
-<div class="contact__detail">
-<img src="./assets/images/contact.png" alt="" class="contact__detail.img" />
-  <div>${name}</div>
-  <div>${relation}</div>
-  <br />
-  <div>Number: ${number}</div>
-  <div>Email: ${email}</div>
-</div>
+    <div class="contact-detail-card">
+      <div class="contact-detail-card__header">
+        <img src="./assets/images/contact.png" alt="" class="contact-detail-card__image" />
+        <p>${name}</p>
+        <p class="content-xs text-light">${relation}</p>
+      </div>
+      <div class="contact-detail-card__body">
+        <p class="content-xs">Number: ${number}</P>
+        <p class="content-xs">Email: ${email}</P>
+      </div>
+    </div>
 
-<div class="__actions">
-  <a class="__back">Back</a>
-  <a class="__delete data-id=${id}>Delete</a>
-  <a class="__edit" data-id=${id}>Edit</a>.
-</div>
-`;
+    <div class="contact-detail-actions">
+      <a class="contact-detail-buttons js-back">Back</a>
+      <a class="contact-detail-buttons js-delete" data-id="${id}">Delete</a>
+      <a class="contact-detail-buttons js-edit" data-id="${id}">Edit</a>
+    </div>
+  `;
 }
 
 function listenBack() {
-  const back = document.querySelector(".__back");
+  const back = document.querySelector(".js-back");
   back.addEventListener("click", async () => {
+    STORE.currentTab = "Contactable";
     DOMHandler.load(HomePage);
   });
 }
 
 function listenDelete() {
-  const contact = document.querySelector(".__delete");
+  const contact = document.querySelector(".js-delete");
   contact.addEventListener("click", async (event) => {
     event.preventDefault();
     const eraseContact = event.target.closest("[data-id]");
