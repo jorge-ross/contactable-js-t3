@@ -4,7 +4,9 @@ import { getContacts } from "./services/contacts-service.js";
 async function fetchContacts() {
   const contacts = await getContacts();
 
-  this.contacts = contacts;
+  this.contacts = contacts.sort((a, b) =>
+    a.name > b.name ? 1 : a.name < b.name ? -1 : 0
+  );
 
   this.favorites = contacts.filter((contact) => contact.favorite === true);
 }

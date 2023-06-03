@@ -12,7 +12,7 @@ function render() {
       <section class="container">
         <div class="home-header">
           <h1 class="home-header__title">${STORE.currentTab}</h1>
-          <button class="home-logout-button">Logout</button>
+          <button class="home-logout-button js-logout">Logout</button>
         </div>
         ${currentTab === "Contactable" ? Contactable : ""}
         ${currentTab === "Create new contact" ? newContact : ""}
@@ -25,7 +25,20 @@ function render() {
 
 function selectContact() {}
 
-function listenLogout() {}
+function listenLogout() {
+  const a = document.querySelector(".js-logout");
+
+  a.addEventListener("click", async (event) => {
+    event.preventDefault();
+
+    try {
+      await logout();
+      DOMHandler.load(LoginPage);
+    } catch (error) {
+      console.log(error);
+    }
+  });
+}
 
 const HomePage = {
   toString() {
