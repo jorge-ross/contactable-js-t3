@@ -35,9 +35,10 @@ const HomePage = {
     listenLogout();
     // if (STORE.currentTab === "expense") ExpensesIncome.addListener();
     // if (STORE.currentTab === "income") ExpensesIncome.addListener();
-    if (["expense", "income"].includes(STORE.currentTab))
-      ExpensesIncome.addListener();
-    if (STORE.currentTab === "profile") Profile.addListeners();
+    // if (["expense", "income"].includes(STORE.currentTab))
+    //   ExpensesIncome.addListener();
+    // if (STORE.currentTab === "profile") Profile.addListeners();
+    Contactable.addListeners();
   },
 };
 

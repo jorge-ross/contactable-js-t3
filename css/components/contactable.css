@@ -1,3 +1,8 @@
+.contactable-title {
+  border-bottom: 1px solid var(--line);
+  padding: 1rem 0.625rem;
+}
+
 .contactable-contacts {
   display: flex;
   flex-direction: column;
@@ -16,12 +21,18 @@
   flex-wrap: nowrap;
 }
 
-.contactable-card svg {
+.contactable-icon {
   width: 20px;
   height: 19px;
-  fill: var(--svg);
+  fill: var(--gray-50);
   stroke-width: 1;
-  stroke: var(--svg);
+  stroke: var(--gray-50);
+}
+
+.contactable-icon--active {
+  fill: var(--black);
+  stroke-width: 1;
+  stroke: var(--black);
 }
 
 .contactable-card__image {

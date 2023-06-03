@@ -21,7 +21,7 @@ import createUser from "./src/pages/sign-up.js";
 //   }
 // }
 
-// DOMHandler.load(LoginPage);
+DOMHandler.load(LoginPage);
 // DOMHandler.load(newContact);
-DOMHandler.load(createUser);
+// DOMHandler.load(createUser);
 // DOMHandler.load(HomePage);

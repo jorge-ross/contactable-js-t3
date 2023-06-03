@@ -6,7 +6,26 @@ async function fetchContacts() {
 
   this.contacts = contacts;
 
-  this.favorite = contacts.filter((contact) => contact.favorite === true);
+  this.favorites = contacts.filter((contact) => contact.favorite === true);
+}
+
+async function updateContactLocal(id, data) {
+  let contact = this.contacts.find((contact) => contact.id == id);
+  const { favorite, name, number, email, relation, ...rest } = contact;
+  const index = this.contacts.indexOf(contact);
+  contact = {
+    favorite:
+      data.favorite === true || data.favorite === false
+        ? data.favorite
+        : favorite,
+    name: data.name ? data.name : name,
+    number: data.number ? data.number : number,
+    email: data.email ? data.email : email,
+    relation: data.relation ? data.relation : relation,
+    ...rest,
+  };
+  this.contacts.splice(index, 1, contact);
+  this.favorites = this.contacts.filter((contact) => contact.favorite === true);
 }
 
 const STORE = {
@@ -16,6 +35,7 @@ const STORE = {
   edit: {},
   currentTab: "Contactable",
   fetchContacts,
+  updateContactLocal,
 };
 
 export default STORE;

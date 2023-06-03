@@ -1,10 +1,11 @@
 import STORE from "../store.js";
 import DOMHandler from "../dom-handler.js";
+import editContact from "../pages/edit-contact-page.js";
 
 function renderContact(contact) {
   return `
     <li>
-      <div class="contactable-card">
+      <div class="contactable-card" data-id="${contact.id}" data-link="edit">
         <div class="contactable-card__contact">
         <img
           class="contactable-card__image"
@@ -13,7 +14,11 @@ function renderContact(contact) {
         />
           <p>${contact.name}</p>
         </div>
-        <svg class="contactable-card__favorite"><use xlink:href="#star"/></svg>
+        <svg data-id="${contact.id}" 
+        data-link="update" class="contactable-icon 
+        ${contact.favorite ? "contactable-icon--active" : ""}">
+          <use xlink:href="#star"/>
+        </svg>
       </div>
     </li>
   `;
@@ -21,27 +26,54 @@ function renderContact(contact) {
 
 function render() {
   const contacts = STORE.contacts;
+  const favorites = STORE.favorites;
   return `
-    <div class="contactable-title">
-      <p>Contacts (${STORE.contacts.length})</p>
+    <div class="js-contacts">
+      ${
+        favorites.length == 0
+          ? ""
+          : `<div>
+              <p class="contactable-title">Favorites (${
+                STORE.favorites.length
+              })</p>
+              <ul class="contactable-favorites js-favorite-list">
+                ${favorites.map(renderContact).join("")}
+              </ul>
+            </div>`
+      }
+      <div>
+        <p class="contactable-title">Contacts (${STORE.contacts.length})</p>
+        <ul class="contactable-contacts js-contact-list">
+          ${contacts.map(renderContact).join("")}
+        </ul>
+      </div>
     </div>
-    <ul class="contactable-contacts js-contact-list">
-      ${contacts.map(renderContact).join("")}
-    </ul>
   `;
 }
 
-function listenSelect() {}
-
-function listenFavorite() {}
+function listenContacts() {
+  const contacts = document.querySelector(".js-contacts");
+  contacts.addEventListener("click", (event) => {
+    event.preventDefault();
+    const link = event.target.closest("[data-link]");
+    if (link.dataset.link == "edit") {
+      // Debo mandar la data a la vista editContact
+      DOMHandler.load(editContact);
+    } else if (link.dataset.link == "update") {
+      const id = link.dataset.id;
+      const contact = STORE.contacts.find((contact) => contact.id == id);
+      STORE.updateContactLocal(id, { favorite: !contact.favorite });
+      DOMHandler.reload();
+    }
+  });
+}
 
 const Contactable = {
   toString() {
     return render();
   },
-  addListener() {
-    listenSelect();
-    listenFavorite();
+  addListeners() {
+    listenContacts();
   },
 };
 

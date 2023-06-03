@@ -16,8 +16,3 @@
   border: 0;
   background: white;
 }
-
-.contactable-title {
-  border-bottom: 1px solid var(--line);
-  padding: 1rem 0.625rem;
-}
