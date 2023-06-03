@@ -24,3 +24,5 @@ async function init() {
 }
 
 init();
+
+// DOMHandler.load(createUser);
