@@ -24,3 +24,7 @@ export async function editContactAPI(id, data) {
   if (data.relation) body.relation = data.relation;
   return await apiFetch(`contacts/${id}`, { method: "PATCH", body: body });
 }
+
+export async function deleteContact(id) {
+  await apiFetch(`contacts/${id}`, { method: "DELETE" });
+}
