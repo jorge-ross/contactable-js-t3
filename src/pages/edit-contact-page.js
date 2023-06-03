@@ -91,7 +91,7 @@ function listenSubmitForm() {
         email: email.value,
         relation: relation.value,
       };
-      await await editContactAPI(id, data);
+      await editContactAPI(id, data);
       STORE.updateContactLocal(id, data);
       STORE.currentTab = "Contactable";
       DOMHandler.reload();
