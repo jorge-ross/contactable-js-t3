@@ -39,6 +39,7 @@ function listenLogout() {
 
     try {
       await logout();
+      STORE.currentTab = "Contactable";
       DOMHandler.load(LoginPage);
     } catch (error) {
       console.log(error);
