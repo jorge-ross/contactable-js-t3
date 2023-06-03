@@ -38,7 +38,7 @@ function render() {
               : ""
           }
           <div class="login-buttons">
-            <a href="#" class="login-sign-up-button js-signup">Signup</a>
+            <a href="#" class="login-sign-up-button js-sign-up">Signup</a>
             <button class="login-login-button">Login</button>
           </div>
         </form>
@@ -74,9 +74,9 @@ function listenSubmitForm() {
 }
 
 function listenSignUp() {
-  const signup = document.querySelector(".js-signup");
+  const signUp = document.querySelector(".js-sign-up");
 
-  signup.addEventListener("click", (event) => {
+  signUp.addEventListener("click", (event) => {
     DOMHandler.load(createUser);
   });
 }
