@@ -4,7 +4,7 @@ import LoginPage from "./login-page.js";
 import { input } from "../components/input.js";
 
 function render() {
-  const { name, number, email, relation } = STORE.edit;
+  const { name, number, email, favorite, relation } = STORE.edit;
   const { formError } = newContact.state;
 
   const title = `${STORE.edit.id ? "Edit" : "Create new"} contact`;
@@ -45,6 +45,12 @@ function render() {
       required: true,
       value: email,
       name: "email",
+    })}
+    ${input({
+      label: "favorite",
+      id: "favorite",
+      value: favorite ? favorite : "false",
+      name: "favorite",
     })}
     ${input({
       label: "relation",

@@ -1,4 +1,5 @@
 import DOMHandler from "../dom-handler.js";
+import HomePage from "./home-page.js";
 import STORE from "../store.js";
 import { input } from "../components/input.js";
 import { newUser } from "../services/user-services.js";

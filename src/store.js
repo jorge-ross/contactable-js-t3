@@ -33,6 +33,7 @@ const STORE = {
   contacts: [],
   favorites: [],
   edit: {},
+  details: {},
   currentTab: "Contactable",
   fetchContacts,
   updateContactLocal,
