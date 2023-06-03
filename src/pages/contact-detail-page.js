@@ -38,6 +38,16 @@ function listenBack() {
   });
 }
 
+function listenEdit() {
+  const edit = document.querySelector(".js-edit");
+  edit.addEventListener("click", async () => {
+    // console.log("clicked");
+    STORE.edit_id = edit.dataset.id;
+    STORE.currentTab = "Edit Contact";
+    DOMHandler.reload();
+  });
+}
+
 function listenDelete() {
   const contact = document.querySelector(".js-delete");
   contact.addEventListener("click", async (event) => {
@@ -62,6 +72,7 @@ const contactDetail = {
   },
   addListeners() {
     listenBack();
+    listenEdit();
     listenDelete();
   },
   state: {

@@ -6,11 +6,7 @@ import { editContactAPI } from "../services/contacts-service.js";
 import { input } from "../components/input.js";
 
 function render() {
-  const { name, number, email, favorite, relation } = STORE.edit;
   const { createError } = newContact.state;
-
-  const title = `${STORE.edit.id ? "Edit" : "Create new"} contact`;
-  STORE.header = { title };
 
   return `
     <main class="section-xs">
@@ -21,7 +17,6 @@ function render() {
               id: "name",
               placeholder: "Name",
               required: true,
-              value: name,
               name: "name",
             })}
             ${
@@ -32,7 +27,6 @@ function render() {
             ${input({
               id: "number",
               placeholder: "Number",
-              value: number,
               name: "number",
             })}
             ${
@@ -45,7 +39,6 @@ function render() {
               placeholder: "Email",
               type: "email",
               required: true,
-              value: email,
               name: "email",
             })}
             ${

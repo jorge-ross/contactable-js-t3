@@ -34,7 +34,7 @@ const STORE = {
   user: null,
   contacts: [],
   favorites: [],
-  edit: {},
+  edit_id: null,
   details: {},
   currentTab: "Contactable",
   fetchContacts,
