@@ -34,6 +34,7 @@
   --line: rgba(0, 0, 0, 0.12);
   --blue: #2962ff;
   --black: #000000;
+  --background: #f5f5f5;
 
   --shadow-input-primary: 0px 0px 4px var(--primary-300);
   --shadow-input-error: 0px 0px 4px var(--error-500);

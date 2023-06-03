@@ -15,6 +15,10 @@
   padding: 0.75rem 1.25rem;
 }
 
+.contactable-card:hover {
+  background-color: var(--background);
+}
+
 .contactable-card__contact {
   display: flex;
   gap: 2rem;
