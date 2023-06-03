@@ -120,3 +120,11 @@
 .p-0 {
   padding: 0;
 }
+
+.border_bottom {
+  border-bottom: 1px solid var(--line);
+}
+
+.text-light {
+  color: var(--text-light);
+}
