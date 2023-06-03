@@ -5,7 +5,7 @@ import editContact from "../pages/edit-contact-page.js";
 function renderContact(contact) {
   return `
     <li>
-      <div class="contactable-card" data-id="${contact.id}" data-link="edit">
+      <div class="contactable-card" data-id="${contact.id}" data-link="show">
         <div class="contactable-card__contact">
         <img
           class="contactable-card__image"
@@ -56,9 +56,8 @@ function listenContacts() {
   contacts.addEventListener("click", (event) => {
     event.preventDefault();
     const link = event.target.closest("[data-link]");
-    if (link.dataset.link == "edit") {
-      // Debo mandar la data a la vista editContact
-      DOMHandler.load(editContact);
+    if (link.dataset.link == "show") {
+      // DOMHandler.load(detailContact);
     } else if (link.dataset.link == "update") {
       const id = link.dataset.id;
       const contact = STORE.contacts.find((contact) => contact.id == id);
