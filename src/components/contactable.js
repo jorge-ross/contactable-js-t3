@@ -1,5 +1,6 @@
 import STORE from "../store.js";
 import DOMHandler from "../dom-handler.js";
+import newContact from "../pages/new-contact-page.js";
 import { editContactAPI } from "../services/contacts-service.js";
 
 function renderContact(contact) {
@@ -47,6 +48,13 @@ function render() {
           ${contacts.map(renderContact).join("")}
         </ul>
       </div>
+      <div class="contactable-add-button">
+        <img
+          class="contactable-add-button__img js-add-button"
+          src="assets/images/add.png"
+          alt="contact-img"
+        />
+      </div>
     </div>
   `;
 }
@@ -73,12 +81,21 @@ function listenContacts() {
   });
 }
 
+function listenCreate() {
+  const createButton = document.querySelector(".js-add-button");
+
+  createButton.addEventListener("click", (event) => {
+    DOMHandler.load(newContact);
+  });
+}
+
 const Contactable = {
   toString() {
     return render();
   },
   addListeners() {
     listenContacts();
+    listenCreate();
   },
 };
 

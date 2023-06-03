@@ -45,3 +45,15 @@
   object-fit: cover;
   border-radius: 0.5rem;
 }
+
+.contactable-add-button {
+  height: 56px;
+  display: inline;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contactable-add-button__img {
+  width: 56px;
+  height: 100%;
+}
