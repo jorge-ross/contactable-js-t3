@@ -3,6 +3,7 @@ import DOMHandler from "../dom-handler.js";
 import LoginPage from "./login-page.js";
 import HomePage from "./home-page.js";
 import { logout } from "../services/sessions-service.js";
+import { deleteContact } from "../services/contacts-service.js";
 
 function render() {
   const { id, name, number, email, favorite, relation, ...rest } =
@@ -61,8 +62,8 @@ function listenDelete() {
     STORE.contacts = contacts;
 
     await deleteContact(id);
-
-    DOMHandler.load(HomePage);
+    STORE.currentTab = "Contactable";
+    DOMHandler.reload();
   });
 }
 
