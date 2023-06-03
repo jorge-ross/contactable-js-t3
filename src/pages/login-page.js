@@ -1,6 +1,7 @@
 import DOMHandler from "../dom-handler.js";
 import STORE from "../store.js";
 import HomePage from "./home-page.js";
+import createUser from "./sign-up.js";
 import { login } from "../services/sessions-service.js";
 import { input } from "../components/input.js";
 
@@ -37,7 +38,7 @@ function render() {
               : ""
           }
           <div class="login-buttons">
-            <a href ="#" class="login-sign-up-button js-signup-link">Signup</a>
+            <a href="#" class="login-sign-up-button js-signup">Signup</a>
             <button class="login-login-button">Login</button>
           </div>
         </form>
@@ -72,12 +73,21 @@ function listenSubmitForm() {
   });
 }
 
+function listenSignUp() {
+  const signup = document.querySelector(".js-signup");
+
+  signup.addEventListener("click", (event) => {
+    DOMHandler.load(createUser);
+  });
+}
+
 const LoginPage = {
   toString() {
     return render.call(this);
   },
   addListeners() {
     listenSubmitForm.call(this);
+    listenSignUp();
   },
   state: {
     loginError: null,
