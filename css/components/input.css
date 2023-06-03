@@ -1,11 +1,22 @@
-.input,
-.select {
+.input {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.25rem;
   width: fit-content;
   width: 100%;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+
+.select {
+  color: var(--gray-200);
+  display: flex;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  width: 14.6875rem;
+  border: 0;
+  border-bottom: 1px solid var(--line);
 }
 
 .input__icon {

@@ -4,6 +4,16 @@ export async function getContacts() {
   return await apiFetch("contacts");
 }
 
+export async function newContactAPI(data) {
+  const body = {
+    name: data.name,
+    number: data.number,
+    email: data.email,
+    relation: data.relation,
+  };
+  return await apiFetch(`contacts`, { method: "POST", body: body });
+}
+
 export async function editContactAPI(id, data) {
   let body = {};
   if (data.favorite === true || data.favorite === false)

@@ -1,0 +1,44 @@
+.new-contact-header {
+  padding: 0.875rem 0.625rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.new-contact-header__title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+}
+
+.new-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.new-contact-form__div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.new-contact-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.625rem;
+  border-top: 1px solid var(--line);
+  padding: 1rem;
+  width: 100%;
+}
+
+.new-contact-sign-up-button {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.new-contact-save-button {
+  color: var(--blue);
+  border: 0;
+  background: white;
+}

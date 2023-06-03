@@ -64,6 +64,7 @@ function listenContacts() {
   divContacts.addEventListener("click", async (event) => {
     event.preventDefault();
     const link = event.target.closest("[data-link]");
+    if (!link) return;
     if (link.dataset.link == "show") {
       const id = link.dataset.id;
       const contact = STORE.contacts.find((contact) => contact.id == id);
@@ -85,7 +86,8 @@ function listenCreate() {
   const createButton = document.querySelector(".js-add-button");
 
   createButton.addEventListener("click", (event) => {
-    DOMHandler.load(newContact);
+    STORE.currentTab = "Create new contact";
+    DOMHandler.reload();
   });
 }
 
