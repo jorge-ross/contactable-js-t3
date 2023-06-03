@@ -56,4 +56,5 @@
 .contactable-add-button__img {
   width: 56px;
   height: 100%;
+  position: sticky;
 }
