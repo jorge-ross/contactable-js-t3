@@ -1,6 +1,7 @@
 import STORE from "../store.js";
 import DOMHandler from "../dom-handler.js";
 import contactDetail from "./contact-detail-page.js";
+import newContact from "./new-contact-page.js";
 import Contactable from "../components/contactable.js";
 // import Profile from "../components/profile.js";
 import LoginPage from "./login-page.js";
@@ -53,9 +54,8 @@ const HomePage = {
     listenLogout();
     // if (STORE.currentTab === "expense") ExpensesIncome.addListener();
     // if (STORE.currentTab === "income") ExpensesIncome.addListener();
-    // if (["expense", "income"].includes(STORE.currentTab))
-    //   ExpensesIncome.addListener();
     if (STORE.currentTab === "Contactable") Contactable.addListeners();
+    if (STORE.currentTab === "Create new contact") newContact.addListeners();
     if (STORE.currentTab === "Contact Detail") contactDetail.addListeners();
   },
 };
