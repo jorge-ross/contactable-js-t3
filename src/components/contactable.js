@@ -1,6 +1,6 @@
 import STORE from "../store.js";
 import DOMHandler from "../dom-handler.js";
-import editContact from "../pages/edit-contact-page.js";
+import { editContactAPI } from "../services/contacts-service.js";
 
 function renderContact(contact) {
   return `
@@ -53,7 +53,7 @@ function render() {
 
 function listenContacts() {
   const contacts = document.querySelector(".js-contacts");
-  contacts.addEventListener("click", (event) => {
+  contacts.addEventListener("click", async (event) => {
     event.preventDefault();
     const link = event.target.closest("[data-link]");
     if (link.dataset.link == "show") {
@@ -61,6 +61,7 @@ function listenContacts() {
     } else if (link.dataset.link == "update") {
       const id = link.dataset.id;
       const contact = STORE.contacts.find((contact) => contact.id == id);
+      await editContactAPI(id, { favorite: !contact.favorite });
       STORE.updateContactLocal(id, { favorite: !contact.favorite });
       DOMHandler.reload();
     }

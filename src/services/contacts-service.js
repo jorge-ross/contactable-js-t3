@@ -5,12 +5,12 @@ export async function getContacts() {
 }
 
 export async function editContactAPI(id, data) {
-  const body = {
-    favorite: data.favorite,
-    name: data.name,
-    number: data.number,
-    email: data.email,
-    relation: data.relation,
-  };
+  let body = {};
+  if (data.favorite === true || data.favorite === false)
+    body.favorite = data.favorite;
+  if (data.name) body.name = data.name;
+  if (data.number) body.number = data.number;
+  if (data.email) body.email = data.email;
+  if (data.relation) body.relation = data.relation;
   return await apiFetch(`contacts/${id}`, { method: "PATCH", body: body });
 }
