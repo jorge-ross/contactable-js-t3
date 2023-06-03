@@ -27,6 +27,11 @@ async function updateContactLocal(id, data) {
     ...rest,
   };
   this.contacts.splice(index, 1, contact);
+
+  this.contacts = this.contacts.sort((a, b) =>
+    a.name > b.name ? 1 : a.name < b.name ? -1 : 0
+  );
+
   this.favorites = this.contacts.filter((contact) => contact.favorite === true);
 }
 
