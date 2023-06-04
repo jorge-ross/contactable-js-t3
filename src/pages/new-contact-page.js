@@ -61,7 +61,9 @@ function render() {
             }
             </br>
             <select class="select${
-              errors.relation ? " select--red" : " select--gray"
+              errors.relation
+                ? " select--border-bottom-red"
+                : " select--border-bottom-gray"
             } select--color-gray js-new-contact-select" 
             name="relation" id="relation">
               ${

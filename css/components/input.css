@@ -24,12 +24,12 @@
   color: var(--gray-400);
 }
 
-.select--gray {
+.select--border-bottom-gray {
   border: 0;
   border-bottom: 1px solid var(--line);
 }
 
-.select--red {
+.select--border-bottom-red {
   border: 0;
   border-bottom: 1px solid var(--error-300);
 }
