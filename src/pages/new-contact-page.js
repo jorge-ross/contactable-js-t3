@@ -62,7 +62,7 @@ function render() {
             </br>
             <select class="select${
               errors.relation ? " select--red" : " select--gray"
-            }" 
+            } select--color-gray js-new-contact-select" 
             name="relation" id="relation">
               ${
                 relation
@@ -99,6 +99,15 @@ function render() {
       </section>
     </main>
     `;
+}
+
+function listenSelect() {
+  const cancel = document.querySelector(".js-new-contact-select");
+
+  cancel.addEventListener("change", (event) => {
+    console.dir(event.target.classList);
+    cancel.classList.replace(event.target.classList[2], "select--color-black");
+  });
 }
 
 function listenSubmitForm() {
@@ -143,6 +152,7 @@ const newContact = {
   },
   addListeners() {
     listenCancel();
+    listenSelect();
     listenSubmitForm.call(this);
   },
   state: {
