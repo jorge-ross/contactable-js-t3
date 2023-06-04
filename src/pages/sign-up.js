@@ -14,6 +14,7 @@ function render() {
           <h1 class="sign-up-header__title">Signup</h1>
         </div>
         <form class="sign-up-form js-sign-up-form">
+        <div class="full-sign-up-form">
           ${input({
             id: "email",
             name: "email",
@@ -35,6 +36,7 @@ function render() {
               ? `<p class="text-center error-300">${CreateUserError}</p>`
               : ""
           }
+          </div>
           <div class="sign-up-buttons">
             <a href="#" class="login-sign-up-button js-login">Login</a>
             <button class="login-login-button">Create Account</button>

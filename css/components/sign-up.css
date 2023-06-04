@@ -10,9 +10,17 @@
 }
 
 .sign-up-form {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.full-sign-up-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 60vh;
 }
 
 .sign-up-buttons {
