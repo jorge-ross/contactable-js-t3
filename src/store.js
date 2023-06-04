@@ -39,6 +39,7 @@ const STORE = {
   user: null,
   contacts: [],
   favorites: [],
+  new: {},
   edit: {},
   details: {},
   errors: {},
