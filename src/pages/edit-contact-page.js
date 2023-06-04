@@ -136,6 +136,7 @@ function listenCancel() {
 
   cancel.addEventListener("click", (event) => {
     STORE.currentTab = "Contactable";
+    STORE.errors = {};
     DOMHandler.reload();
   });
 }
