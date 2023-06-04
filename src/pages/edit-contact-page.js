@@ -61,8 +61,10 @@ function render() {
             }
             </br>
             <select class="select${
-              errors.relation ? " select--red" : " select--gray"
-            }" 
+              errors.relation
+                ? " select--border-bottom-red"
+                : " select--border-bottom-gray"
+            } select--color-gray js-new-contact-select" 
             name="relation" id="relation">
               <option value="${relation}" selected disabled hidden>${relation}</option>
               <option value="Family">Family</option>
@@ -91,6 +93,14 @@ function render() {
       </section>
     </main>
   `;
+}
+
+function listenSelect() {
+  const cancel = document.querySelector(".js-new-contact-select");
+
+  cancel.addEventListener("change", (event) => {
+    cancel.classList.replace(event.target.classList[2], "select--color-black");
+  });
 }
 
 function listenSubmitForm() {
@@ -136,6 +146,7 @@ const editContact = {
   },
   addListeners() {
     listenSubmitForm.call(this);
+    listenSelect();
     listenCancel();
   },
   state: {

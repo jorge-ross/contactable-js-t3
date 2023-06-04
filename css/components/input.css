@@ -10,21 +10,26 @@
 }
 
 .select {
-  color: var(--gray-200);
   display: flex;
   font-size: 0.75rem;
   line-height: 1.25rem;
   width: 14.6875rem;
-  /* border: 0; */
-  /* border-bottom: 1px solid var(--line); */
 }
 
-.select--gray {
+.select--color-gray {
+  color: var(--gray-200);
+}
+
+.select--color-black {
+  color: var(--gray-400);
+}
+
+.select--border-bottom-gray {
   border: 0;
   border-bottom: 1px solid var(--line);
 }
 
-.select--red {
+.select--border-bottom-red {
   border: 0;
   border-bottom: 1px solid var(--error-300);
 }
