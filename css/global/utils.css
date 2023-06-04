@@ -121,8 +121,12 @@
   padding: 0;
 }
 
-.border_bottom {
+.border-bottom-gray {
   border-bottom: 1px solid var(--line);
+}
+
+.border-bottom-red {
+  border-bottom: 1px solid var(--error-300);
 }
 
 .text-light {

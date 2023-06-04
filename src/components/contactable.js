@@ -71,7 +71,6 @@ function listenContacts() {
       STORE.details = contact;
       STORE.currentTab = "Contact Detail";
       DOMHandler.reload();
-      // console.log(STORE.currentTab);
     } else if (link.dataset.link == "update") {
       const id = link.dataset.id;
       const contact = STORE.contacts.find((contact) => contact.id == id);

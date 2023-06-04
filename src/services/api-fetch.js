@@ -1,4 +1,5 @@
 import { BASE_URI, tokenKey } from "../config.js";
+import STORE from "../store.js";
 
 export default async function apiFetch(
   endpoint,
@@ -35,6 +36,9 @@ export default async function apiFetch(
     } catch (error) {
       throw new Error(response.statusText);
     }
+    // console.log(data);
+    //Create error with custom properties
+    STORE.errors = data;
     throw new Error(data.errors);
   }
 

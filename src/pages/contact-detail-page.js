@@ -42,8 +42,9 @@ function listenBack() {
 function listenEdit() {
   const edit = document.querySelector(".js-edit");
   edit.addEventListener("click", async () => {
-    // console.log("clicked");
-    STORE.edit_id = edit.dataset.id;
+    const id = edit.dataset.id;
+    const contact = STORE.contacts.find((contact) => contact.id == id);
+    STORE.edit = contact;
     STORE.currentTab = "Edit Contact";
     DOMHandler.reload();
   });

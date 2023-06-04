@@ -65,7 +65,6 @@ function listenSubmitForm() {
       STORE.user = user;
       await STORE.fetchContacts();
       DOMHandler.load(HomePage);
-      // console.log(STORE.user);
     } catch (error) {
       this.state.loginError = error.message;
       DOMHandler.reload();

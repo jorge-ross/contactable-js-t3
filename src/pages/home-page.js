@@ -15,7 +15,7 @@ function render() {
     <main class="section-xs">
       <section class="container">
         <div class="home-header
-        ${currentTab === "Contactable" ? "border_bottom" : ""}">
+        ${currentTab === "Contactable" ? "border-bottom-gray" : ""}">
           <h1 class="home-header__title ${styles}">
             ${STORE.currentTab}
           </h1>

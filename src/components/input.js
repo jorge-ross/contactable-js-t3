@@ -6,6 +6,7 @@ export function input({
   type,
   required = false,
   value = false,
+  error,
 }) {
   return `
     <div class="input">
@@ -15,7 +16,8 @@ export function input({
           : ""
       }
      
-      <div class="input__container">
+      <div class="input__container
+      ${error ? " border-bottom-red" : " border-bottom-gray"}">
         <input
           type="${type ? type : "text"}"
           placeholder="${placeholder}"
