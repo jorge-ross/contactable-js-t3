@@ -6,59 +6,78 @@ import { input } from "../components/input.js";
 function render() {
   const id = STORE.edit_id;
   const contact = STORE.contacts.find((contact) => contact.id == id);
-  // console.log(id);
-  // console.log(contact);
   const { name, number, email, relation, ...rest } = contact;
   const { editError } = editContact.state;
+  const errors = STORE.errors;
 
   return `
     <main class="section-xs">
       <section class="container">
         <form class="new-contact-form js-edit-contact-form">
-          <div class="new-contact-form__div">
+          <div>
             ${input({
               id: "name",
               placeholder: "Name",
-              required: true,
               value: name,
               name: "name",
+              error: errors.name,
             })}
             ${
-              editError.name
-                ? `<p class="error-300">${editError.name.join(", ")}</p>`
+              errors.name
+                ? `<p class="input__error-message">Name: ${errors.name.join(
+                    ", "
+                  )}</p>`
                 : ""
             }
+            </br>
             ${input({
               id: "number",
               placeholder: "Number",
               value: number,
               name: "number",
+              error: errors.number,
             })}
             ${
-              editError.number
-                ? `<p class="error-300">${editError.number.join(", ")}</p>`
+              errors.number
+                ? `<p class="input__error-message">Number: ${errors.number.join(
+                    ", "
+                  )}</p>`
                 : ""
             }
+            </br>
             ${input({
               id: "email",
               placeholder: "Email",
-              type: "email",
-              required: true,
+              type: "text",
               value: email,
               name: "email",
+              error: errors.email,
             })}
             ${
-              editError.email
-                ? `<p class="error-300">${editError.email.join(", ")}</p>`
+              errors.email
+                ? `<p class="input__error-message">Email: ${errors.email.join(
+                    ", "
+                  )}</p>`
                 : ""
             }
-            <select class="select" name="relation" id="relation">
+            </br>
+            <select class="select${
+              errors.relation ? " select--red" : " select--gray"
+            }" 
+            name="relation" id="relation">
               <option value="${relation}" selected disabled hidden>${relation}</option>
               <option value="Family">Family</option>
               <option value="Friends">Friends</option>
               <option value="Work">Work</option>
               <option value="Acquaintance">Acquaintance</option>
             </select>
+            ${
+              errors.relation
+                ? `<p class="select__error-message">Relation: ${errors.relation.join(
+                    ", "
+                  )}</p>`
+                : ""
+            }
             ${
               editError
                 ? `<p class="text-center error-300">${editError}</p>`
@@ -97,7 +116,8 @@ function listenSubmitForm() {
       DOMHandler.reload();
     } catch (error) {
       // console.log(error);
-      this.state.editError = error.message;
+      console.log(STORE.errors);
+      this.state.editError = error.messages;
       DOMHandler.reload();
     }
   });

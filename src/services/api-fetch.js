@@ -1,4 +1,5 @@
 import { BASE_URI, tokenKey } from "../config.js";
+import STORE from "../store.js";
 
 export default async function apiFetch(
   endpoint,
@@ -26,6 +27,8 @@ export default async function apiFetch(
     body: body ? JSON.stringify(body) : null,
   };
 
+  // console.log(body);
+
   const response = await fetch(`${BASE_URI}/${endpoint}`, config);
 
   let data;
@@ -35,6 +38,8 @@ export default async function apiFetch(
     } catch (error) {
       throw new Error(response.statusText);
     }
+    //Create error with custom properties
+    STORE.errors = data;
     throw new Error(data.errors);
   }
 
@@ -44,5 +49,6 @@ export default async function apiFetch(
     data = response.statusText;
   }
 
+  // console.log(response);
   return data;
 }

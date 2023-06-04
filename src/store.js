@@ -41,6 +41,7 @@ const STORE = {
   favorites: [],
   edit_id: null,
   details: {},
+  errors: {},
   currentTab: "Contactable",
   fetchContacts,
   updateContactLocal,

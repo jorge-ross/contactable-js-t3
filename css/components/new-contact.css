@@ -16,13 +16,6 @@
   align-items: center;
 }
 
-.new-contact-form__div {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-}
-
 .new-contact-buttons {
   display: flex;
   justify-content: flex-end;
