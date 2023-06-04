@@ -16,6 +16,10 @@
   align-items: center;
 }
 
+.full-contact-form {
+  padding-bottom: 20rem;
+}
+
 .new-contact-buttons {
   display: flex;
   justify-content: flex-end;

@@ -13,7 +13,7 @@ function render() {
     <main class="section-xs">
       <section class="container">
         <form class="new-contact-form js-new-contact-form">
-          <div">
+          <div class="full-contact-form">
             ${input({
               id: "name",
               placeholder: "Name",
