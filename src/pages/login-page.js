@@ -14,6 +14,7 @@ function render() {
           <h1 class="login-header__title">Login</h1>
         </div>
         <form class="login-form js-login-form">
+        <div class="login-full-form">
           ${input({
             id: "email",
             name: "email",
@@ -37,6 +38,7 @@ function render() {
               ? `<p class="text-center error-300">${loginError}</p>`
               : ""
           }
+          </div>
           <div class="login-buttons">
             <a href="#" class="login-sign-up-button js-sign-up">Signup</a>
             <button class="login-login-button">Login</button>
