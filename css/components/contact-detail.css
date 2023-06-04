@@ -1,7 +1,7 @@
 .contact-detail-card {
   border-bottom: 1px solid var(--line);
   position: relative;
-  padding-bottom: 97%;
+  padding-bottom: 20rem;
 }
 
 .contact-detail-card__header {
