@@ -49,11 +49,11 @@ function render() {
         </ul>
       </div>
       <div class="contactable-add-button">
-        <img
-          class="contactable-add-button__img js-add-button"
-          src="assets/images/add.png"
-          alt="contact-img"
-        />
+          <img
+            class="contactable-add-button__img js-add-button"
+            src="assets/images/add.png"
+            alt="contact-img"
+          />
       </div>
     </div>
   `;

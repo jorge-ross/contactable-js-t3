@@ -47,6 +47,10 @@
 }
 
 .contactable-add-button {
+  /* position: -webkit-sticky; */
+  position: sticky;
+  bottom: 0;
+  right: 0;
   height: 56px;
   display: inline;
   display: flex;
@@ -56,5 +60,4 @@
 .contactable-add-button__img {
   width: 56px;
   height: 100%;
-  position: sticky;
 }
