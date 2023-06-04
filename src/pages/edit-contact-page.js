@@ -4,8 +4,7 @@ import { editContactAPI } from "../services/contacts-service.js";
 import { input } from "../components/input.js";
 
 function render() {
-  const id = STORE.edit_id;
-  const contact = STORE.contacts.find((contact) => contact.id == id);
+  const contact = STORE.edit;
   const { name, number, email, relation, ...rest } = contact;
   const { editError } = editContact.state;
   const errors = STORE.errors;
@@ -95,29 +94,28 @@ function render() {
 }
 
 function listenSubmitForm() {
-  const id = STORE.edit_id;
+  const id = STORE.edit.id;
   const form = document.querySelector(".js-edit-contact-form");
 
   form.addEventListener("submit", async (event) => {
+    const { name, number, email, relation } = event.target.elements;
+    const data = {
+      name: name.value,
+      number: number.value,
+      email: email.value,
+      relation: relation.value,
+    };
     try {
       event.preventDefault();
-
-      const { name, number, email, relation } = event.target.elements;
-
-      const data = {
-        name: name.value,
-        number: number.value,
-        email: email.value,
-        relation: relation.value,
-      };
       await editContactAPI(id, data);
       STORE.updateContactLocal(id, data);
       STORE.currentTab = "Contactable";
+      STORE.errors = {};
       DOMHandler.reload();
     } catch (error) {
-      // console.log(error);
-      console.log(STORE.errors);
       this.state.editError = error.messages;
+      STORE.edit = data;
+      STORE.edit.id = id;
       DOMHandler.reload();
     }
   });

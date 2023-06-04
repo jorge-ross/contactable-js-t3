@@ -39,7 +39,7 @@ const STORE = {
   user: null,
   contacts: [],
   favorites: [],
-  edit_id: null,
+  edit: {},
   details: {},
   errors: {},
   currentTab: "Contactable",
